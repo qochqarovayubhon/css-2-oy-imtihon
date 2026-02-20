@@ -14,21 +14,30 @@
   </head>
   <body>
     <div class="navbar">
-      <div class="navbar_link card-contener">
+      <div class="navbar_link contenr">
         <div class="navbar_logo">
-          <a href="">GoRent</a>
+          <a href="#">GoRent</a>
         </div>
-        <div class="navbar_a">
-          <a href="">Home</a>
-          <a href="">Featured</a>
-          <a href="">Pricing</a>
-          <a href="">Contack</a>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="navbar-button">
-          <a href="">Sign up</a>
-          <button class="navbar-button-button">Login</button>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+
+        <div class="nav-menu" id="nav-menu">
+          <div class="navbar_a">
+            <a href="#">Home</a>
+            <a href="#">Featured</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contack</a>
+          </div>
+
+          <div class="navbar-button">
+            <a href="#">Sign up</a>
+            <button>Login</button>
+          </div>
         </div>
-        <div class="menu-toggle">☰</div>
       </div>
       <div class="navbar-taytil-img contenr">
         <div class="navbar_taytil">
@@ -198,5 +207,25 @@
         <button>Login</button>
       </div>
     </div>
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("nav-menu");
+
+      // Menu ochish/yopish
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation(); // tashqariga event ketmasin
+        menu.classList.toggle("active");
+      });
+
+      // Menu ichini bossak yopilmasin
+      menu.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      // Tashqarini bossak yopilsin
+      document.addEventListener("click", () => {
+        menu.classList.remove("active");
+      });
+    </script>
   </body>
 </html>
